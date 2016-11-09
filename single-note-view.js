@@ -1,7 +1,8 @@
 (function(exports){
+  
   function SingleNote(noteObj){
     this.noteObj = noteObj;
-  };
+  }
 
   SingleNote.prototype.htmlNote = function () {
     var noteText = this.noteObj.text;

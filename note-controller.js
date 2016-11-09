@@ -6,7 +6,7 @@
   }
 
   Instantiate.prototype.htmlList = function () {
-    this.noteList.storeNote("input=id text, do somenthing that you like");
+    this.noteList.storeNote("input id text, do somethig that you like");
     this.noteList.storeNote("pray, eat monkey, pray, jump, run");
     this.noteList.storeNote("pray, eat monkey, eat, all right");
     this.noteList.storeNote("pray, monkey, eat");
@@ -18,10 +18,3 @@
   exports.Instantiate = Instantiate;
 
 })(this);
-
-window.onload = function() {
-  var noteController = new Instantiate();
-  var test = document.getElementById('app');
-  test.innerHTML = noteController.htmlList();
-
-};
