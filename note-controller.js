@@ -14,12 +14,13 @@
       this.count++;
     },
 
-    htmlSingleNote: function () {
-      return this.singleNoteView.displayNote();
-    },
+    // htmlSingleNote: function () {
+    //   return this.singleNoteView.displayNote();
+    // },
 
     htmlList: function () {
-      this.noteList.createNewNote(textReturn());
+      this.createNewNote("anything?more of something....:P");
+      this.createNewNote("anything?more of nothing....:P");
       var joiner = this.noteListView.htmlJoiner();
       return joiner;
     },
@@ -30,6 +31,7 @@
       this.noteList.storeNote(new Note(text, id));
     },
 
+
     listNote: function () {
       var test =  document.getElementById("app");
       test.innerHTML = this.htmlList();
@@ -37,7 +39,7 @@
 
     run: function () {
       this.listNote();
-      this.htmlSingleNote();
+      // this.ht();
     }
 
   };

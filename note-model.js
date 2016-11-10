@@ -8,6 +8,10 @@
   Note.prototype = {
     textReturn: function () {
       return this.text;
+    },
+
+    id: function () {
+      return this.id;
     }
   };
 

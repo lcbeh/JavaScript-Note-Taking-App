@@ -9,6 +9,8 @@
     htmlNote: function () {
       var noteText = this.singleNote.text;
       var div = document.createElement("div");
+      console.log(this.singleNote.id)
+      div.setAttribute("id", this.singleNote.id)
       div.innerHTML = noteText;
       return div;
     },
