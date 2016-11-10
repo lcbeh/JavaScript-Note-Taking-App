@@ -21,10 +21,6 @@
   };
 
 
-  NoteListView.prototype.listNote = function () {
-    var test =  document.getElementById("app");
-    test.innerHTML = noteController.htmlList();
-  };
 
 
   exports.NoteListView = NoteListView;

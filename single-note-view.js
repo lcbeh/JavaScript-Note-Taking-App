@@ -8,8 +8,8 @@
   SingleNoteView.prototype.htmlNote = function () {
     var noteText = this.noteObj.text;
     var div = document.createElement("div");
-    var text = document.createTextNode(noteText);
-    return div.appendChild(text);
+    div.innerHTML = noteText;
+    return div;
   };
 
   SingleNoteView.prototype.displayNote = function () {
