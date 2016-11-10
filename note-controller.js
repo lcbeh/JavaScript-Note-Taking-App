@@ -8,7 +8,7 @@
   }
 
   NoteController.prototype.htmlSingleNote = function () {
-    return this.singleNoteView.htmlNote();
+    return this.singleNoteView.displayNote();
   };
 
   NoteController.prototype.htmlList = function () {
@@ -16,6 +16,17 @@
     // this.noteList.storeNote("pray, eat monkey, pray, jump, run");
     var joiner = this.noteListView.htmlJoiner();
     return joiner;
+  };
+
+  NoteController.prototype.listNote = function () {
+    var test =  document.getElementById("app");
+    test.innerHTML = this.htmlList();
+  };
+
+
+  NoteController.prototype.run = function () {
+    this.listNote();
+    this.htmlSingleNote();
   };
 
   exports.NoteController = NoteController;

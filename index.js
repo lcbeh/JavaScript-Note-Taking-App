@@ -9,14 +9,7 @@ var noteController = new NoteController();
 // }
 
 
-function listNote() {
-  var test =  document.getElementById("app");
-  test.innerHTML = noteController.htmlList();
-}
-
 
 window.onload = function() {
-
-  // createFirstDiv();
-  listNote();
+  noteController.run();
 };
