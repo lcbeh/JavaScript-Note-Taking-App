@@ -1,20 +1,23 @@
 (function(exports){
 
-  function Instantiate(noteList, view){
+  function NoteController(noteList, noteListView, singleNote, singleNoteView){
     this.noteList = new NoteList();
-    this.view = new NoteListView(this.noteList);
+    this.noteListView = new NoteListView(this.noteList);
+    this.singleNote = new Note("Today is today!! bla bla bla bla");
+    this.singleNoteView = new SingleNoteView(this.singleNote);
   }
 
-  Instantiate.prototype.htmlList = function () {
-    this.noteList.storeNote("input id text, do somethig that you like");
-    this.noteList.storeNote("pray, eat monkey, pray, jump, run");
-    this.noteList.storeNote("pray, eat monkey, eat, all right");
-    this.noteList.storeNote("pray, monkey, eat");
-    this.noteList.storeNote("pray, eat, eat");
-    var joiner = this.view.htmlJoiner();
+  NoteController.prototype.htmlSingleNote = function () {
+    return this.singleNoteView.htmlNote();
+  };
+
+  NoteController.prototype.htmlList = function () {
+    this.noteList.storeNote(this.singleNote.textReturn());
+    // this.noteList.storeNote("pray, eat monkey, pray, jump, run");
+    var joiner = this.noteListView.htmlJoiner();
     return joiner;
   };
 
-  exports.Instantiate = Instantiate;
+  exports.NoteController = NoteController;
 
 })(this);

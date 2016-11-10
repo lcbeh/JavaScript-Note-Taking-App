@@ -33,7 +33,8 @@ function ViewReturnHTMLstring() {
   var view = new NoteListView(noteList);
   noteList.storeNote("harry potter");
   noteList.storeNote("pray, eat, eat");
-  if (view.htmlJoiner() == "<ul><li><div>harry potter</li></div><li><div>pray, eat, eat</li></div></ul>") {
+  // console.log(noteList.htmlJoiner());
+  if (view.htmlJoiner() == "<ul><li><div>harry potter ...</li></div><li><div>pray, eat, eat ...</li></div></ul>") {
     console.log("ViewReturnHTMLstring");
   } else {
     console.log("false");
@@ -42,7 +43,7 @@ function ViewReturnHTMLstring() {
 
 function singleNoteViewReturnsHTML() {
   var note = new Note("harry potter");
-  singleNote = new SingleNote(note);
+  singleNote = new SingleNoteView(note);
   if (singleNote.htmlNote() == "<div>harry potter</div>") {
     console.log("singleNoteViewReturnsHTML");
   } else {
