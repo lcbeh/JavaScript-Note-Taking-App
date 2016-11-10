@@ -8,20 +8,25 @@
     return (string.slice(0, 20) + " ...");
   };
 
-  NoteListView.prototype.htmlWrapper = function () {
-    var stringArr = this.noteList.stringArray();
-    var resultArray = stringArr.map(function(string) {
-      return ("<li><div>") + twentyCharacters(string) + ("</li></div>");
-    }).join("");
-    return resultArray;
+  NoteListView.prototype = {
+
+    htmlURL: function () {
+      var index = 0;
+      var stringArr = this.noteList.stringArray();
+      var resultArray = stringArr.map(function(string) {
+        index++;
+        return ("<li><div><a href='#notes/" + index + "'>") + twentyCharacters(string) + ("</a></li></div>");
+      }).join("");
+      return resultArray;
+    },
+
+    htmlJoiner: function () {
+      return ("<ul>" + this.htmlURL() + "</ul>");
+    },
+
+    
+
   };
-
-  NoteListView.prototype.htmlJoiner = function () {
-    return ("<ul>" + this.htmlWrapper() + "</ul>");
-  };
-
-
-
 
   exports.NoteListView = NoteListView;
 

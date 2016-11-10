@@ -5,28 +5,41 @@
     this.noteListView = new NoteListView(this.noteList);
     this.singleNote = new Note("Today is today!! bla bla bla bla");
     this.singleNoteView = new SingleNoteView(this.singleNote);
+    this.count = 0;
   }
 
-  NoteController.prototype.htmlSingleNote = function () {
-    return this.singleNoteView.displayNote();
-  };
+  NoteController.prototype = {
 
-  NoteController.prototype.htmlList = function () {
-    this.noteList.storeNote(this.singleNote.textReturn());
-    // this.noteList.storeNote("pray, eat monkey, pray, jump, run");
-    var joiner = this.noteListView.htmlJoiner();
-    return joiner;
-  };
+    idIncrement: function () {
+      this.count++;
+    },
 
-  NoteController.prototype.listNote = function () {
-    var test =  document.getElementById("app");
-    test.innerHTML = this.htmlList();
-  };
+    htmlSingleNote: function () {
+      return this.singleNoteView.displayNote();
+    },
 
+    htmlList: function () {
+      this.noteList.createNewNote(textReturn());
+      var joiner = this.noteListView.htmlJoiner();
+      return joiner;
+    },
 
-  NoteController.prototype.run = function () {
-    this.listNote();
-    this.htmlSingleNote();
+    createNewNote: function (text) {
+      var id = this.count;
+      this.idIncrement();
+      this.noteList.storeNote(new Note(text, id));
+    },
+
+    listNote: function () {
+      var test =  document.getElementById("app");
+      test.innerHTML = this.htmlList();
+    },
+
+    run: function () {
+      this.listNote();
+      this.htmlSingleNote();
+    }
+
   };
 
   exports.NoteController = NoteController;
