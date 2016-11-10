@@ -10,21 +10,18 @@
 
   NoteListView.prototype = {
 
-    htmlURL: function () {
-      var index = 0;
-      var stringArr = this.noteList.stringArray();
-      var resultArray = stringArr.map(function(string) {
-        index++;
-        return ("<li><div><a href='#notes/" + index + "'>") + twentyCharacters(string) + ("</a></li></div>");
+    htmlList: function () {
+      var notes = this.noteList.noteArray;
+      var list = notes.map(function(note) {
+        return ("<li><div><a href='#notes/" + note.idReturn() + "'>") + twentyCharacters(note.textReturn()) + ("</a></li></div>");
       }).join("");
-      return resultArray;
+      return ("<ul>" + list + "</ul>");
     },
 
-    htmlJoiner: function () {
-      return ("<ul>" + this.htmlURL() + "</ul>");
+    listNote: function () {
+      var notePreview =  document.getElementById("preview");
+      notePreview.innerHTML = this.htmlList();
     },
-
-    
 
   };
 

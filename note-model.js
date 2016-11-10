@@ -10,7 +10,7 @@
       return this.text;
     },
 
-    id: function () {
+    idReturn: function () {
       return this.id;
     }
   };

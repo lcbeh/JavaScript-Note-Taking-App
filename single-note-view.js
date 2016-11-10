@@ -1,27 +1,15 @@
 (function(exports){
 
-  function SingleNoteView(singleNote){
-    this.singleNote = singleNote;
+  function SingleNoteView(noteElement){
+    this.noteElement = noteElement; //document.getElementById("content")
   }
 
   SingleNoteView.prototype = {
 
-    htmlNote: function () {
-      var noteText = this.singleNote.text;
-      var div = document.createElement("div");
-      console.log(this.singleNote.id)
-      div.setAttribute("id", this.singleNote.id)
-      div.innerHTML = noteText;
-      return div;
+    displayNote: function (noteObj) {
+      console.log(this.noteElement);
+      this.noteElement.innerHTML = noteObj.text;
     },
-
-    displayNote: function () {
-      var target = document.getElementById("app");
-      target.appendChild(this.htmlNote());
-    },
-
-
-
   };
 
   exports.SingleNoteView = SingleNoteView;
