@@ -6,8 +6,8 @@
 
   NoteList.prototype = {
 
-    storeNote: function(singleNote) {
-      this.noteArray.push(singleNote);
+    storeNote: function(noteObj) {
+      this.noteArray.push(noteObj);
     },
 
    stringArray: function () {

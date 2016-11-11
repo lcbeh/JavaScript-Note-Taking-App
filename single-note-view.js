@@ -7,8 +7,9 @@
   SingleNoteView.prototype = {
 
     displayNote: function (noteObj) {
-      console.log(this.noteElement);
+      console.log(noteObj)
       this.noteElement.innerHTML = noteObj.text;
+      console.log(this.noteElement.innerHTML)
     },
   };
 
