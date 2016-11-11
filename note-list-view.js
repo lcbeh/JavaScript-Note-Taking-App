@@ -18,7 +18,7 @@
       return ("<ul>" + list + "</ul>");
     },
 
-    listNote: function () {
+    displayListNote: function () {
       var notePreview =  document.getElementById("preview");
       notePreview.innerHTML = this.htmlList();
     },
