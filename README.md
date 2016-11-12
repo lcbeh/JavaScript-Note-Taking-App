@@ -1,6 +1,6 @@
-# Writing a frontend, single page app using only pure JavaScript (further JS)
+# Note-App
 
-## Learning objectives
+A single page note taking app written in pure JavaScript. 
 
 ### Concepts
 
