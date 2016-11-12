@@ -2,6 +2,7 @@ var listOfNotes = null;
 
 function makeUrlChange (noteList) {
   listOfNotes = noteList.noteArray;
+  console.log(listOfNotes);
   window.addEventListener("hashchange", showSelectedNote);
 }
 
